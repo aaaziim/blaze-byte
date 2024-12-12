@@ -5,15 +5,15 @@ const NavLinks = () => {
 
         <>
             <li   >
-                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/' className={({ isActive }) => isActive ? "text-primary" : "text-secondary"} >Home</NavLink>
 
             </li>
             <li   >
-                <NavLink to='/blogs'>Blogs</NavLink>
+                <NavLink to='/blogs' className={({ isActive }) => isActive ? "text-primary" : "text-secondary"} >Blogs</NavLink>
 
             </li>
             <li   >
-                <NavLink to='/blogs'>Bookmarks</NavLink>
+                <NavLink to='/bookmarks' className={({ isActive }) => isActive ? "text-primary" : "text-secondary"}>Bookmarks</NavLink>
 
             </li>
 
