@@ -4,15 +4,15 @@ const NavLinks = () => {
     return (
 
         <>
-            <li>
+            <li   >
                 <NavLink to='/'>Home</NavLink>
 
             </li>
-            <li>
+            <li   >
                 <NavLink to='/blogs'>Blogs</NavLink>
 
             </li>
-            <li>
+            <li   >
                 <NavLink to='/blogs'>Bookmarks</NavLink>
 
             </li>
