@@ -6,7 +6,6 @@ import Bookmarks from '../pages/Bookmarks/Bookmarks.jsx'
 import SingleBlog from "../pages/SingleBlog/SingleBlog.jsx"
 import Author from "../components/Author/Author.jsx"
 import Content from "../components/Content/Content.jsx"
-
 const router = createBrowserRouter([
     {
         path: "/",
