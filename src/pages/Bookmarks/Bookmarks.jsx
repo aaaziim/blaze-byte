@@ -3,7 +3,7 @@
 import { useLoaderData } from "react-router-dom";
 import BlogCard from "../../components/Blogcard/BlogCard";
 import { useEffect, useState } from "react";
-import { getBookmarks } from "../../utils/localStorageManagement";
+import { deleteBookmark, getBookmarks } from "../../utils/localStorageManagement";
 
 const Bookmarks = () => {
 
@@ -13,6 +13,14 @@ const Bookmarks = () => {
         const bookmarkedblogs = getBookmarks();
         setBookmarks(bookmarkedblogs);
     }, [])
+
+
+    const handleDelete = (blog) => {
+        deleteBookmark(blog);
+        const bookmarkedblogs = getBookmarks();
+        setBookmarks(bookmarkedblogs)
+    }
+
     return (
         <div>
             <section className="">
@@ -23,6 +31,7 @@ const Bookmarks = () => {
                             key={blog.id}
                             blog={blog}
                             deletable={true}
+                            handleDelete={handleDelete}
                         ></BlogCard>)}
 
                     </div>
