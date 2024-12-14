@@ -1,15 +1,24 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import BlogCard from "../../components/Blogcard/BlogCard";
-
+import RingLoader from "react-spinners/ClipLoader";
+import { useEffect } from "react";
 const Blogs = () => {
-
 
     const blogs = useLoaderData();
 
+    const navigation = useNavigation()
 
+    if (navigation.state === "loading") {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <RingLoader color="#36d7b7" size={60} />
+            </div>
+        );
+    }
     return (
         <div>
             <section className="">
+
                 <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
                     <a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 ">
                         <img src={blogs[0].cover_image} alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 " />
@@ -19,7 +28,7 @@ const Blogs = () => {
                             <p>{blogs[0].description}</p>
                         </div>
                     </a>
-                    <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid justify-center grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                         {blogs.map(blog => <BlogCard
                             key={blog.id}
                             blog={blog}
@@ -27,11 +36,7 @@ const Blogs = () => {
                         ></BlogCard>)}
 
                     </div>
-                    {/* <div className="flex justify-center">
-                        <button type="button" className="px-6 py-3 text-sm rounded-md hover:underline 
-                        
-                        ">Load more posts...</button>
-                    </div> */}
+
                 </div>
             </section>
         </div>

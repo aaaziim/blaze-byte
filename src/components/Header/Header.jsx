@@ -9,7 +9,6 @@ const Header = () => {
         localStorage.setItem('theme', theme);
         const localTheme = localStorage.getItem('theme');
         document.querySelector('html').setAttribute('data-theme', localTheme);
-        console.log(localTheme)
     }, [theme])
 
     const handleThemeChange = (e) => {
@@ -41,7 +40,7 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content   rounded-box z-[1] mt-3 w-52 p-2 shadow font-bold ">
+                        className="menu menu-sm dropdown-content  bg-slate-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-bold ">
 
                         <NavLinks></NavLinks>
 
